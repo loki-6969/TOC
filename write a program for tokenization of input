@@ -1,0 +1,38 @@
+Program 1----------------------------
+word = "word"
+
+char_tokens = list(word)
+
+print(char_tokens)
+
+Program 2---------------------------
+import string
+
+sentence = "Hello, world!"
+
+cleaned_sentence = "".join(char for char in sentence if char not in string.punctuation and char != " ")
+
+char_tokens = list(cleaned_sentence)
+
+print(char_tokens)
+
+Program 3---------------------------
+
+# Paragraph tokenization of words
+
+paragraph = "This is an example paragraph. It contains several words."
+
+word_tokens = paragraph.split()
+
+print(word_tokens)
+
+Program 4--------------------------
+
+# Paragraph tokenization of words
+
+paragraph = "This is an example paragraph. It contains several words."
+
+word_tokens = paragraph.split(" ")
+
+print(word_tokens)
+
