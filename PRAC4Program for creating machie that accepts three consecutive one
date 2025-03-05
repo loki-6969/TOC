@@ -1,39 +1,50 @@
 def state_A(n):
     if len(n) == 0:
-        print("String is accepted")
+        print("String is rejected") 
         return
     if n[0] == '0':
-        state_A(n[1:])  # Stay in State A
+        return state_A(n[1:])
     elif n[0] == '1':
-        state_B(n[1:])  # Move to State B
+        return state_B(n[1:])
 
 def state_B(n):
     if len(n) == 0:
         print("String is rejected")
         return
     if n[0] == '0':
-        print("String is rejected")
-    else:
-        state_C(n[1:])  # Move to State C
+        return state_D(n[1:])
+    elif n[0] == '1':
+        return state_C(n[1:])
 
 def state_C(n):
     if len(n) == 0:
-        print("String is accepted")
+        print("String is rejected")
         return
     if n[0] == '0':
-        state_C(n[1:])  # Stay in State C
+        print("String is rejected!")  
+        return
     elif n[0] == '1':
-        state_D(n[1:])  # Move to State D
+        return state_F(n[1:])
 
 def state_D(n):
     if len(n) == 0:
-        print("String is accepted")
+        print("String is rejected")
         return
-    else:
-        state_D(n[1:])  # Continue processing in State D
+    if n[0] == '0':
+        return state_D(n[1:])
+    elif n[0] == '1':
+        return state_C(n[1:])
 
-# Take input from user
-n = input("Give a string in combination of 0 and 1: ")
+def state_F(n):
+    if len(n) == 0:
+        print("String is accepted") 
+        return
+    if n[0] == '0':
+        return state_F(n[1:])
+    elif n[0] == '1':
+        return state_B(n[1:])
 
-# Start processing from State A
+
+n = input("Give a string in combination of 0,1: ")
 state_A(n)
+
