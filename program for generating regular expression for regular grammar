@@ -1,0 +1,96 @@
+Program 1-------------------
+import re
+
+S = "Swayam: An online platform for course certification"
+
+# Define the pattern to search
+pattern = "online"
+
+# Search for the pattern in the string
+match = re.search(pattern, S)
+
+# Check if a match is found
+if match:
+    print(f"Start index: {match.start()}")
+    print(f"End index: {match.end()}")
+else:
+    print("No match found")
+
+Program 2----------------------
+import re
+
+string = "Hello, my Number is 913727777 and my friend's number is 8762166614."
+
+pattern = r"\d+"  # Regular expression to match numbers
+
+matches = re.findall(pattern, string)
+
+print(matches)  # Output: ['913727777', '8762166614']
+
+Program 3----------------------
+import re
+
+# Pattern to match uppercase letters A-Z
+p = re.compile(r"[A-Z]")
+print(p.findall("Aye, said Mr. Gibson Stark."))
+
+# Pattern to match lowercase letters a-z
+p = re.compile(r"[a-z]")
+print(p.findall("Aye, said Mr. Gibson Stark."))
+
+# Pattern to match uppercase letters and digits 0-2
+p = re.compile(r"[A-Z0-2]")
+print(p.findall("Aye, said Mr. Gibson Stark."))
+
+Program 4------------------------
+import re
+
+# Corrected regex pattern (example: finding words starting with 'lw')
+p = re.compile(r"\blw")  
+
+# Sample text
+text = "Aye, said Mr. Gibson Stark."
+
+# Find all matches
+print(p.findall(text))  # Output depends on text content
+
+Program 5-------------------------
+import re
+
+# Target string
+str1 = "Emma's lucky numbers are 251 761 231 451"
+
+# Pattern to match three consecutive digits
+pattern = r"\d{3}"
+
+# Compile regex pattern
+regex_pattern = re.compile(pattern)
+
+# Find all matches
+result = regex_pattern.findall(str1)
+
+# Print result
+print(result)  # Output: ['251', '761', '231', '451']
+
+Program 6------------------------------
+import re
+
+# First pattern: Searching for 'Id' in the text
+p = re.compile(r"Id")
+print(p.findall("I want to meet him at 11AM on 4th July 1886"))
+
+# Second pattern: Searching for 'lalt.' in the text
+p = re.compile(r"lalt.")
+print(p.findall("I went to him at 11th on 4th July"))
+
+Program 7-------------------------------
+import re
+
+# Compile the pattern to find occurrences of "ab"
+p = re.compile(r"ab")
+
+# Find all occurrences in the given string
+result = p.findall("ababbaabbb")
+
+# Print the result
+print(result)  # Output: ['ab', 'ab', 'ab']
